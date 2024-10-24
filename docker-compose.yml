@@ -1,0 +1,22 @@
+version: '3.8'  # Specify the version of Docker Compose
+
+services:
+  app:
+    build: .
+    image: fake-review-detector
+    command: 'python3 ./src/server.py'
+    deploy:
+      resources:
+        limits:
+          cpus: '4.0'  # Limit to 4 CPUs
+          memory: 8G    # Limit to 8 GB of memory
+        reservations:
+          cpus: '2.0'   # Reserve 2 CPUs
+          memory: 2G   
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      - PYTHONUNBUFFERED=1  # Optional: Ensures that the output is logged in real-time
+      - WORKERS=4  # Optional: If you want to define a number of workers for multi-threading in your code
+    ports:
+      - 5000:5000
