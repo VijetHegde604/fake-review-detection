@@ -8,7 +8,7 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 COPY . /app/
 
-EXPOSE 5000
+# EXPOSE 5000
 
 
-# CMD ["python3", "./src/server.py"]
+# CMD ["python3", "./src/main.py"]

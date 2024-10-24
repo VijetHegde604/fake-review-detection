@@ -4,7 +4,7 @@ services:
   app:
     build: .
     image: fake-review-detector
-    command: 'python3 ./src/server.py'
+    command: 'python3 ./src/main.py'
     deploy:
       resources:
         limits:

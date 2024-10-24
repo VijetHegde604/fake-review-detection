@@ -35,7 +35,7 @@ pipeline = Pipeline([
 X_train, X_test, y_train, y_test = train_test_split(X, y_encoded, test_size=0.2, random_state=42)
 
 # Check if model exists
-model_path = 'best_fake_review_model.pkl'
+model_path = './saved_model/best_fake_review_model.pkl'
 
 if os.path.exists(model_path):
     # Load the model if it exists
