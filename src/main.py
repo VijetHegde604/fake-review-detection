@@ -85,5 +85,5 @@ def predict_percentage(reviews):
     return percentage
 
 # Example usage:
-# reviews = ["This product is amazing!", "Terrible, do not buy."]
-# print("Percentage of fake reviews:", predict_percentage(reviews))
+reviews = ["This product is amazing!", "Terrible, do not buy."]
+print("Percentage of fake reviews:", predict_percentage(reviews))
