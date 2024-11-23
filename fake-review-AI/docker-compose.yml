@@ -1,0 +1,22 @@
+
+
+services:
+  app:
+    build: .
+    image: fake-review-detector
+    command: 'python3 ./src/diagnostic.py'
+    deploy:
+      resources:
+        limits:
+          cpus: '12.0'  # Limit to 4 CPUs
+          memory: 10G    # Limit to 8 GB of memory
+        reservations:
+          cpus: '2.0'   # Reserve 2 CPUs
+          memory: 2G   
+    volumes:
+      - .:/app  # Mount the current directory to /app in the container
+    environment:
+      - PYTHONUNBUFFERED=1  # Optional: Ensures that the output is logged in real-time
+      - WORKERS=4  # Optional: If you want to define a number of workers for multi-threading in your code
+    ports:
+      - 5000:5000

@@ -1,0 +1,22 @@
+# Use an official Python runtime as a base image
+FROM python:3.10-slim-bullseye
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the requirements file to the container
+COPY requirements.txt .
+
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get update && apt-get install -y libgomp1
+RUN python3 -m spacy download en_core_web_sm
+
+# Copy the entire application into the container
+COPY . .
+
+# Expose the port the API will run on
+EXPOSE 5000
+
+# Run the Python API
+CMD ["python3", "src/server.py"]
