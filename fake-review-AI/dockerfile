@@ -8,8 +8,10 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
 RUN apt-get update && apt-get install -y libgomp1
+
+RUN pip install --no-cache-dir -r requirements.txt
+
 RUN python3 -m spacy download en_core_web_sm
 
 # Copy the entire application into the container
