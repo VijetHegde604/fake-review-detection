@@ -1,5 +1,7 @@
 import puppeteer from "puppeteer";
 import fs from "fs";
+import dotenv from "dotenv";
+dotenv.config();
 
 const COOKIES_FILE_PATH = "cookies.json"; // Path to store cookies
 
@@ -42,7 +44,7 @@ async function loginIfNeeded(page) {
 }
 
 async function scrapeReviewText(productPageURL, maxReviews = 100) {
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({ headless: false });
   const page = await browser.newPage();
 
   // Log in or load cookies
