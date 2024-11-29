@@ -1,6 +1,6 @@
 import { scrapeReviewText } from "./scraper.js";
 const url =
-  "https://www.amazon.in/Bosch-Aquatak-1500-Watt-Pressure-Washer/dp/B07BLCWPNR/?_encoding=UTF8&pd_rd_w=HUHBQ&content-id=amzn1.sym.509965a2-791b-4055-b876-943397d37ed3%3Aamzn1.symc.fc11ad14-99c1-406b-aa77-051d0ba1aade&pf_rd_p=509965a2-791b-4055-b876-943397d37ed3&pf_rd_r=9P5FFJT8RVMJSRSHSKHG&pd_rd_wg=5g8eL&pd_rd_r=6b281189-be98-477a-abeb-64ed6cecdd7f&ref_=pd_hp_d_atf_ci_mcx_mr_ca_hp_atf_d#customerReviews";
+  "https://www.amazon.in/Popsugar-Rechargeable-Control-Headlight-Charging/dp/B0CQK691XQ/?_encoding=UTF8&pd_rd_w=JQewn&content-id=amzn1.sym.1bef8eb0-2346-4755-ba81-a5e9f44b2e73&pf_rd_p=1bef8eb0-2346-4755-ba81-a5e9f44b2e73&pf_rd_r=BV1CEWG78KJT76NTEVVW&pd_rd_wg=mFc3x&pd_rd_r=c8ace79c-dd9c-4eb5-9d96-5e404de68305&ref_=pd_hp_d_btf_PB_toys&th=1";
 scrapeReviewText(url, 100)
   .then(() => console.log("Scraping completed."))
   .catch((error) => console.error("Error:", error));
