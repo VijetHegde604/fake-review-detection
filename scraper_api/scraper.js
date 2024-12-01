@@ -3,7 +3,7 @@ import fs from "fs";
 import dotenv from "dotenv";
 dotenv.config();
 
-const COOKIES_FILE_PATH = "./cookies.json";
+const COOKIES_FILE_PATH = "./data/cookies.json";
 
 async function saveCookies(page) {
   const cookies = await page.cookies();
@@ -46,7 +46,10 @@ async function loginIfNeeded(page) {
 }
 
 async function scrapeReviewText(productPageURL, maxReviews = 100) {
-  const browser = await puppeteer.launch({ headless: false });
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
+  });
   const page = await browser.newPage();
 
   // Log in or load cookies
@@ -119,10 +122,7 @@ async function scrapeReviewText(productPageURL, maxReviews = 100) {
   // Limit reviews to the maximum specified
   reviews = reviews.slice(0, maxReviews);
 
-  // Write reviews to a file
-  fs.writeFileSync("reviews.json", JSON.stringify(reviews, null, 2));
   console.log(`Scraped ${reviews.length} reviews.`);
-  console.log("Reviews saved to reviews.json");
 
   await browser.close();
   return reviews;
