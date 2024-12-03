@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import joblib
 import numpy as np
 from sklearn.preprocessing import StandardScaler
@@ -9,6 +10,7 @@ from collections import Counter
 from sklearn.metrics import f1_score
 
 app = Flask(__name__)
+CORS(app)
 
 # Load the trained model and other components
 model_dir = './saved_models'
