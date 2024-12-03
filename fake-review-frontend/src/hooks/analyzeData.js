@@ -10,7 +10,7 @@ const useAnalyzeData = () => {
     setError(null);
 
     try {
-      const response = await fetch("http://homeserverpi:5000/predict", {
+      const response = await fetch("http://localhost:5000/predict", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
