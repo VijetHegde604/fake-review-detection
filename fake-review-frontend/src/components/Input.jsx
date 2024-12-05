@@ -27,7 +27,7 @@ function Input() {
         }));
         axios
             .post(
-                "http://homeserverpi:5000/predict", filteredData,
+                "http://localhost:5000/predict", filteredData,
                 {
                     headers: {
                         "Content-Type": "application/json",
