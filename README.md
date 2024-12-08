@@ -18,7 +18,7 @@ Fake reviews can mislead customers and harm business credibility. This project l
 ---
 
 ## **Technologies Used**
-- **Programming Language**: Python
+- **Programming Language**: Python, JavaScript, NodeJS
 - **Libraries**: 
   - Machine Learning: `scikit-learn`, `lightgbm`, `xgboost`, `catboost`
   - NLP: `spacy`, `TextBlob`
