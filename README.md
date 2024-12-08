@@ -45,4 +45,8 @@ Fake reviews can mislead customers and harm business credibility. This project l
    ```
 > **Note:** This starts the docker container and react frontend, 
 > The website will be available at **localhost:5173**
+
+
+**My LinkedIn**
+https://www.linkedin.com/in/vijet-hegde-5b8324274/
    
