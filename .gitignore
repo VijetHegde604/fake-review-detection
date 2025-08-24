@@ -173,3 +173,5 @@ node_modules
 cookies.json
 
 reviews.json
+
+/data/cookies.json
