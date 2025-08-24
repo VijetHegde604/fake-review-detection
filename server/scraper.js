@@ -3,6 +3,8 @@ import fs from "fs";
 import dotenv from "dotenv";
 dotenv.config();
 
+console.log("CWD:", process.cwd());
+
 const COOKIES_FILE_PATH = "./data/cookies.json";
 
 async function saveCookies(page) {
@@ -47,7 +49,7 @@ async function loginIfNeeded(page) {
 
 async function scrapeReviewText(productPageURL, maxReviews = 100) {
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();

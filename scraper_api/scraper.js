@@ -46,8 +46,9 @@ async function loginIfNeeded(page) {
 }
 
 async function scrapeReviewText(productPageURL, maxReviews = 100) {
+  console.log("OK");
   const browser = await puppeteer.launch({
-    headless: true,
+    headless: false,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();
