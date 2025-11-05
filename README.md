@@ -38,7 +38,7 @@ Fake reviews can mislead customers and harm business credibility. This project l
 
 ```bash
 git clone https://github.com/VijetHegde604/fake-review-detection.git
-cd fake-review-detection
+cd fake-review-detector
 ```
 
 ### **2. Set Up the `.env` File for the Server**
