@@ -1,8 +1,6 @@
-version: '3.8'
-
 services:
   flask-api:
-    build: .
+    image: vijethegde/fake_review_api:latest
     ports:
       - "5000:5000"
     volumes:

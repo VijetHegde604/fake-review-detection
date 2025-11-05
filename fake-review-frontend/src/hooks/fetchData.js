@@ -10,7 +10,7 @@ const useFetch = () => {
     setError(null); // Reset error state before fetching.
 
     try {
-      const response = await fetch("http://localhost:8069/scrape-reviews", {
+      const response = await fetch("http://localhost:3000/scrape-reviews", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
